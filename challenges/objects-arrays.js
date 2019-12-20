@@ -138,12 +138,24 @@ The resulting contact information strings should have a space between the first 
 "Josh josh@example.com"
 
 Log the result of your new array. */
-const contactInfo = [];
-console.log(contactInfo.join(' '));
+// const contactInfo = [];
+// graduates.forEach(function(item, index, array) {
+//     contactInfo.push(item.first_name + ' ' + item.email);
+// });
+const contactInfo = graduates.map(function(item, index, array) {
+    return item.first_name + ' ' + item.email;
+});
+
+console.log('contactInfo', contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
-console.log(unisWithUni);
+graduates.forEach(function(item, index, array) {
+    if (item.university.indexOf('Uni') !== -1) {
+        return unisWithUni.push(item);
+    }
+});
+console.log(unisWithUni.length);
 
 // ==== ADVANCED Array Methods ====
 
