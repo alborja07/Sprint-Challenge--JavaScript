@@ -234,11 +234,6 @@ zooAnimals.forEach(function(item, index, array) {
     displayNames.push(item.animal_name, item.scientific_name);
 });
 
-// const contactInfo = [];
-// graduates.forEach(function(item, index, array) {
-//     contactInfo.push(item.first_name + ' ' + item.email);
-// });
-
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -247,20 +242,20 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = graduates.map(function(item, index, array) {
-    return item.first_name + ' ' + item.email;
-});
+// const lowCaseAnimalNames = zooAnimals.map((item, index, array) => {
+//     return animal_name.toLowerCase;
+// });
 
-console.log('contactInfo', contactInfo);
-
-console.log(lowCaseAnimalNames);
+// console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = [];
+const lowPopulationAnimals = zooAnimals.filter(item => {
+    return item.population < 5;
+});
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
